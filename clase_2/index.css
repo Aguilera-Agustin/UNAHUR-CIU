@@ -1,0 +1,131 @@
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  color: #000;
+  margin-top: 10vh;
+  margin-bottom: 0;
+  padding: 0 2rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #000;
+  max-width: 80vw;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.button_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  background-color: white;
+  border: 2px solid black;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button_option_container {
+  background-color: black;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.button_option_text {
+  color: white;
+  padding: 0 0.5rem;
+}
+
+.divider {
+  width: 80%;
+  opacity: 0.7;
+  margin: 1.5rem auto;
+}
+
+/* Stickman */
+.stickman {
+  height: calc(50px + 90px);
+  margin-bottom: 1rem;
+}
+.stickman_face {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin: 1rem auto;
+  position: relative;
+}
+.stickman_body {
+  width: 3px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+}
+.stickman_hand {
+  width: 40px;
+  height: 3px;
+  position: absolute;
+  background-color: black;
+  bottom: -25%;
+}
+.stickman_hand_right {
+  left: 45%;
+  transform: rotate(-20deg);
+}
+.stickman_hand_left {
+  right: 45%;
+  transform: rotate(20deg);
+}
+.stickman_foot {
+  width: 3px;
+  height: 40px;
+  background-color: black;
+  position: absolute;
+  top: 95px;
+}
+.stickman_foot_left {
+  left: 40%;
+  transform: rotate(16deg);
+}
+.stickman_foot_right {
+  left: 60%;
+  transform: rotate(-16deg);
+}
+.stickman_description {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #000;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-style: italic;
+}
