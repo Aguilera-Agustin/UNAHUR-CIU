@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" class="w-100 h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .color {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <button type="button" id="beep">BEEP</button>
+
+    <script>
+      const button = document.getElementById("beep");
+      const body = document.getElementById("body");
+      const callback = () => {
+        body.insertAdjacentHTML("beforeend", `<p>BEEP!</p>`);
+        body.classList.toggle("color");
+      };
+      button.addEventListener("click", callback);
+    </script>
+  </body>
+</html>

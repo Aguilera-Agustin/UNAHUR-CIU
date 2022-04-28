@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .resaltado {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+      cupiditate omnis assumenda deserunt repudiandae tenetur dolor suscipit
+      vero quo eligendi! Quos nam et sint non beatae delectus excepturi pariatur
+      laudantium!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+      cupiditate omnis assumenda deserunt repudiandae tenetur dolor suscipit
+      vero quo eligendi! Quos nam et sint non beatae delectus excepturi pariatur
+      laudantium!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+      cupiditate omnis assumenda deserunt repudiandae tenetur dolor suscipit
+      vero quo eligendi! Quos nam et sint non beatae delectus excepturi pariatur
+      laudantium!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+      cupiditate omnis assumenda deserunt repudiandae tenetur dolor suscipit
+      vero quo eligendi! Quos nam et sint non beatae delectus excepturi pariatur
+      laudantium!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+      cupiditate omnis assumenda deserunt repudiandae tenetur dolor suscipit
+      vero quo eligendi! Quos nam et sint non beatae delectus excepturi pariatur
+      laudantium!
+    </p>
+
+    <script>
+      const parrafos = document.querySelectorAll("p");
+      parrafos.forEach((element) => {
+        element.addEventListener("click", () => {
+          element.classList.toggle("resaltado");
+        });
+      });
+    </script>
+  </body>
+</html>
