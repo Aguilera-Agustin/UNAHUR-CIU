@@ -41,7 +41,18 @@ const activarModoAgregar = () => {
 const agregar = () => {
   const nombreInput = document.getElementById("nombreInput").value;
   const temporadasInput = document.getElementById("temporadasInput").value;
+  if (
+    nombreInput === "" ||
+    temporadasInput === "" ||
+    !esNumeroNatural(temporadasInput)
+  ) {
+    return alert(
+      "Por favor, ingrese un nombre y una cantidad de temporadas vistas válidos."
+    );
+  }
+
   agregarColumna({ nombre: nombreInput, temporadas: temporadasInput });
+
   salirModoAgregar();
 };
 
@@ -159,7 +170,7 @@ const agregarColumna = ({ nombre, temporadas }) => {
 
 const salirModoAgregar = () => {
   agregando = false;
-  botonAgregar.innerHTML = "Nueva";
+  botonAgregar.innerHTML = "Nueva serie";
   document.getElementById("botonSalir").remove();
   const tablaAgregar = document.getElementById("tablaAgregar");
   tablaAgregar.classList.toggle("hidden");
@@ -212,6 +223,9 @@ finalizarEdicion.addEventListener("click", () => {
   if (modalTemporadasInput === "" && modalNombreInput === "") {
     return;
   }
+  if (!esNumeroNatural(modalTemporadasInput)) {
+    return alert("La cantidad de temporadas debe ser un número natural");
+  }
   if (modalTemporadasInput !== "") {
     temporadaSeleccionada.innerHTML = modalTemporadasInput;
   }
@@ -257,4 +271,8 @@ const buscar = () => {
     }
     return (tabla.rows[i].style.display = "none");
   }
+};
+
+const esNumeroNatural = (numero) => {
+  return /^\d+$/.test(numero);
 };
