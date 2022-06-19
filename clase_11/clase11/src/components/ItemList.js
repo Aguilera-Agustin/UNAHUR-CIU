@@ -30,7 +30,7 @@ const ItemList = () => {
         {loading && <Loading />}
         {items &&
           items.map((item) => (
-            <Col className="colSpace">
+            <Col className="colSpace" id={item.id}>
               <Item item={item} />
             </Col>
           ))}
