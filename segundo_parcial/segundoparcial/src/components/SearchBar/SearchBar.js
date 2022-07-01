@@ -1,8 +1,9 @@
-import { Input, Container, Spacer } from "@nextui-org/react";
 import React, { useState } from "react";
+import { Input, Container, Spacer, Row, Text } from "@nextui-org/react";
 import cocktailServices from "../../services/cocktailServices";
+import Chip from "../Chip/Chip";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, suggestions }) => {
   const [searchValue, setSearchValue] = useState("");
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +24,13 @@ const SearchBar = ({ onSearch }) => {
           onChange={(e) => setSearchValue(e.target.value)}
         />
       </form>
+      <Spacer />
+      <Row align="center" css={{ overflow: "hidden" }}>
+        <Text css={{ marginRight: "$10" }}>Surgerencias</Text>
+        {suggestions?.map(({ drinks }) => (
+          <Chip key={drinks[0].idDrink}>{drinks[0].strDrink}</Chip>
+        ))}
+      </Row>
     </Container>
   );
 };

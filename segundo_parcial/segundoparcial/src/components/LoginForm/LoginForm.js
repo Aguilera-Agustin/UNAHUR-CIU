@@ -1,10 +1,19 @@
-import { Button, Card, Divider, Row, Spacer, Text } from "@nextui-org/react";
+import {
+  Button,
+  Card,
+  Checkbox,
+  Divider,
+  Row,
+  Spacer,
+  Text,
+} from "@nextui-org/react";
 import React from "react";
 import { useForm } from "../../hooks/useForm";
 import LoginFormItem from "../LoginFormItem/LoginFormItem";
 
 const LoginForm = ({ onLogin }) => {
-  const { handleChange, handleSubmit } = useForm(onLogin);
+  const { handleChange, handleSubmit, handleCheck } = useForm(onLogin);
+
   return (
     <Card as="form">
       <Card.Body>
@@ -29,6 +38,11 @@ const LoginForm = ({ onLogin }) => {
           password
         />
         <Spacer y={2} />
+        <Row justify="center" align="center" gap={1}>
+          <Checkbox name="remember" onChange={handleCheck} />
+          <Text>Recordarme</Text>
+        </Row>
+        <Spacer y={1} />
         <Row justify="center" align="center">
           <Button onClick={handleSubmit}>Iniciar Sesión</Button>
         </Row>

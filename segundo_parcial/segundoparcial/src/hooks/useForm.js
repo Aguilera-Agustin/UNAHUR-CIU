@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export const useForm = (onSubmit) => {
   const [form, setForm] = useState();
+  const [check, setCheck] = useState(false);
 
   const handleChange = (e) => {
     setForm({
@@ -11,8 +12,11 @@ export const useForm = (onSubmit) => {
   };
 
   const handleSubmit = (e) => {
-    onSubmit(form);
+    onSubmit({ ...form, check });
   };
 
-  return { form, handleChange, handleSubmit };
+  const handleCheck = (e) => {
+    setCheck(!check);
+  };
+  return { form, handleChange, handleSubmit, handleCheck };
 };
