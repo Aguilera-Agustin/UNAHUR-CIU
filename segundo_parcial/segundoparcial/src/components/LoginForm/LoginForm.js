@@ -44,7 +44,9 @@ const LoginForm = ({ onLogin }) => {
         </Row>
         <Spacer y={1} />
         <Row justify="center" align="center">
-          <Button onClick={handleSubmit}>Iniciar Sesión</Button>
+          <Button shadow onClick={handleSubmit}>
+            Iniciar Sesión
+          </Button>
         </Row>
       </Card.Body>
     </Card>

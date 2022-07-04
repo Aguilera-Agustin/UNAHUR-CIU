@@ -1,20 +1,25 @@
 import React, { useState } from "react";
-import { Input, Container, Spacer, Text, Grid } from "@nextui-org/react";
-import cocktailServices from "../../services/cocktailServices";
+import {
+  Input,
+  Container,
+  Spacer,
+  Text,
+  Grid,
+  Loading,
+} from "@nextui-org/react";
 import Chip from "../Chip/Chip";
 
 const SearchBar = ({ onSearch, suggestions }) => {
   const [searchValue, setSearchValue] = useState("");
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    const data = await cocktailServices.searchByName(searchValue);
-    onSearch(data);
+    onSearch(searchValue);
   };
   const onChipPress = async (title) => {
     setSearchValue(title);
-    const data = await cocktailServices.searchByName(title);
-    onSearch(data);
+    onSearch(title);
   };
+
   return (
     <Container sm>
       <Spacer y={3} />
@@ -35,6 +40,7 @@ const SearchBar = ({ onSearch, suggestions }) => {
           <Text css={{ marginRight: "$10" }}>Surgerencias</Text>
         </Grid>
         <Grid md={10} xs={12}>
+          {suggestions?.length === 0 && <Loading />}
           {suggestions?.map(({ drinks }) => (
             <Chip
               key={drinks[0].idDrink}

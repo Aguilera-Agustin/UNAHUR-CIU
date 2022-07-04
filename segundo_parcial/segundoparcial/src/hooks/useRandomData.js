@@ -3,8 +3,10 @@ import cocktailServices from "../services/cocktailServices";
 
 export const useRandomData = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const promisses = [
         cocktailServices.getRandom(),
         cocktailServices.getRandom(),
@@ -12,6 +14,7 @@ export const useRandomData = () => {
       ];
       const random = await Promise.all(promisses);
       setData(random);
+      setLoading(false);
     };
 
     fetchData();
@@ -19,5 +22,6 @@ export const useRandomData = () => {
 
   return {
     data,
+    loading,
   };
 };
