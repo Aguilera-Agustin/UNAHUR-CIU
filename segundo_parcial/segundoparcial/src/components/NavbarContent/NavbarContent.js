@@ -9,7 +9,9 @@ const NavbarContent = ({ username, onLogout }) => {
         <Text color="secondary">{`@${username}`}</Text>!
       </Text>
 
-      <Button onClick={onLogout}>Cerrar Sesión</Button>
+      <Button size={"sm"} onClick={onLogout}>
+        Cerrar Sesión
+      </Button>
     </Row>
   );
 };

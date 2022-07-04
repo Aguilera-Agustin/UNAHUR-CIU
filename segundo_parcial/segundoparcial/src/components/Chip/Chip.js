@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Text } from "@nextui-org/react";
 
-const Chip = ({ children }) => {
+const Chip = ({ children, onPress }) => {
   return (
     <Card
       css={{
@@ -9,9 +9,11 @@ const Chip = ({ children }) => {
         marginRight: "$10",
         width: "fit-content",
       }}
+      isPressable
+      onPress={onPress}
     >
-      <Card.Body css={{ padding: "$0 $10", height: "$12" }}>
-        <Text size={15} color="white" css={{ m: 0 }}>
+      <Card.Body css={{ padding: "$0 $5", height: "$12" }}>
+        <Text size={12} color="white" css={{ m: 0 }}>
           {children}
         </Text>
       </Card.Body>

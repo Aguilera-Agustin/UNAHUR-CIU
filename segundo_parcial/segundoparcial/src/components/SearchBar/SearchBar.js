@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Container, Spacer, Row, Text } from "@nextui-org/react";
+import { Input, Container, Spacer, Text, Grid } from "@nextui-org/react";
 import cocktailServices from "../../services/cocktailServices";
 import Chip from "../Chip/Chip";
 
@@ -8,6 +8,11 @@ const SearchBar = ({ onSearch, suggestions }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     const data = await cocktailServices.searchByName(searchValue);
+    onSearch(data);
+  };
+  const onChipPress = async (title) => {
+    setSearchValue(title);
+    const data = await cocktailServices.searchByName(title);
     onSearch(data);
   };
   return (
@@ -25,12 +30,21 @@ const SearchBar = ({ onSearch, suggestions }) => {
         />
       </form>
       <Spacer />
-      <Row align="center" css={{ overflow: "hidden" }}>
-        <Text css={{ marginRight: "$10" }}>Surgerencias</Text>
-        {suggestions?.map(({ drinks }) => (
-          <Chip key={drinks[0].idDrink}>{drinks[0].strDrink}</Chip>
-        ))}
-      </Row>
+      <Grid.Container>
+        <Grid md={2} xs={12}>
+          <Text css={{ marginRight: "$10" }}>Surgerencias</Text>
+        </Grid>
+        <Grid md={10} xs={12}>
+          {suggestions?.map(({ drinks }) => (
+            <Chip
+              key={drinks[0].idDrink}
+              onPress={() => onChipPress(drinks[0].strDrink)}
+            >
+              {drinks[0].strDrink}
+            </Chip>
+          ))}
+        </Grid>
+      </Grid.Container>
     </Container>
   );
 };

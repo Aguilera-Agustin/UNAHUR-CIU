@@ -5,12 +5,13 @@ const Title = ({ title }) => {
   return (
     <Text
       h1
-      size={100}
+      size={50}
       css={{
         textGradient: "45deg, $blue600 -20%, $pink600 50%",
+        textAlign: "center",
+        letterSpacing: "0px",
       }}
       weight="black"
-      style={{ textAlign: "center", letterSpacing: "0px" }}
     >
       {title}
     </Text>
