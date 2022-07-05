@@ -13,7 +13,7 @@ const Chip = ({ children, onPress }) => {
       onPress={onPress}
     >
       <Card.Body css={{ padding: "$0 $5", height: "$12" }}>
-        <Text size={12} color="white" css={{ m: 0 }}>
+        <Text size={12} css={{ m: 0 }}>
           {children}
         </Text>
       </Card.Body>

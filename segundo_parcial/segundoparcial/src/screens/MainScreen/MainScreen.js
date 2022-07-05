@@ -33,7 +33,7 @@ const MainScreen = ({ username, onLogout }) => {
   const empty = !data;
   const notResults = !empty && !data?.drinks;
   return (
-    <>
+    <main style={{ minHeight: "80vh" }}>
       <Navbar username={username} onLogout={onLogout} />
       <Spacer />
       <Title title="Mi Coctelería" />
@@ -66,7 +66,7 @@ const MainScreen = ({ username, onLogout }) => {
           />
         )}
       </InfoCardsContainer>
-    </>
+    </main>
   );
 };
 

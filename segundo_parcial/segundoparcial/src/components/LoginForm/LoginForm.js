@@ -18,7 +18,7 @@ const LoginForm = ({ onLogin }) => {
     <Card as="form">
       <Card.Body>
         <Row justify="center" align="center">
-          <Text h6 size={24} color="white">
+          <Text h6 size={24}>
             Iniciar Sesión
           </Text>
         </Row>
